@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {
   ApolloClient,
@@ -13,6 +13,9 @@ import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
+import WebFont from 'webfontloader'; 
+//boostrap css 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -34,10 +37,16 @@ const client = new ApolloClient({
 });
 
 function App() {
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Lobster']
+      }
+    });
+   }, []);
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
           <Nav />
           <Switch>
             <Route exact path="/" component={Home} />
@@ -45,7 +54,6 @@ function App() {
             <Route exact path="/signup" component={Signup} />
             <Route component={NoMatch} />
           </Switch>
-        </div>
       </Router>
     </ApolloProvider>
   );

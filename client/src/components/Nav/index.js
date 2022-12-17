@@ -1,17 +1,27 @@
 import React from "react";
 import Auth from "../../utils/auth";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Badge from 'react-bootstrap/Badge'; 
 
-function Nav() {
+
+function Navi() {
 
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className="flex-row">
+        <Container>
+          <Nav>
+        <ul className="f">
           <li className="mx-1">
+            <Badge pill bg='warning'>
             <Link to="/orderHistory">
               Order History
             </Link>
+            </Badge>
           </li>
           <li className="mx-1">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
@@ -20,38 +30,50 @@ function Nav() {
             </a>
           </li>
         </ul>
+        </Nav>
+        </Container>
       );
     } else {
       return (
-        <ul className="flex-row">
+        <Container>
+          <Nav>
+            <Nav.Item>
           <li className="mx-1">
-            <Link to="/signup">
+            <Badge pill bg="warning">
+            <Link to="/signup" className="signup">
               Signup
             </Link>
+            </Badge>
           </li>
-          <li className="mx-1">
-            <Link to="/login">
+          </Nav.Item>
+          <li className="mx-2">
+            <Badge pill bg='warning'>
+            <Link to="/login" className="login">
               Login
             </Link>
+            </Badge>
           </li>
-        </ul>
+        </Nav>
+        </Container>
       );
     }
   }
 
   return (
-    <header className="flex-row px-1">
+    
+    <Navbar className="navb">
+    <header className="head">
       <h1>
-        <Link to="/">
-          <span role="img" aria-label="shopping bag">Path-finder 🔭</span>
+        <Link to="/" text='warning' className="navtext">
+          <span style={{fontFamily: 'Lobster'}} role="img" >Path-finder ⛰</span>
         </Link>
       </h1>
-
-      <nav>
         {showNavigation()}
-      </nav>
     </header>
+    </Navbar>
+    
   );
+  
 }
 
-export default Nav;
+export default Navi;
