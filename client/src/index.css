@@ -45,3 +45,26 @@ body {
 .mx-2 { 
   padding-left: 40px;
 }
+
+.formsignup h2 {
+  color: rgb(126, 72, 28);
+  font-size: 50px;
+  padding-bottom: 25px;
+  margin-left: 10px;
+}
+
+.signupdiv { 
+  background: wheat;
+  margin: 150px;
+  padding: 50px;
+}
+
+.formsignup { 
+  padding-top: 10px;
+  padding-left: 400px;
+}
+
+.backLogin { 
+  text-decoration: none;
+  color: wheat;
+}
