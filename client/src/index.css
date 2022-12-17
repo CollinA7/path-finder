@@ -1,14 +1,21 @@
-
+body { 
+  background-image: url(../src/assets/autumn-trees.jpeg);
+  background-repeat: no-repeat;
+  
+}
 
 .navb { 
   display: flex;
-  background-color: olive;
+  background-color: wheat;
   margin: 0%;
   font-size: 15px;
+  padding-bottom: 30px;
+  margin-bottom: 45px;
 } 
 
 .head { 
   padding-left: 50px;
+  padding-bottom: 20px;
 }
 
 .navtext {
@@ -21,13 +28,13 @@
 .signup { 
   font-size: 15px;
   text-decoration: none;
-  color: white; 
+  color: rgb(126, 72, 28); 
 }
 
 .login { 
   font-size: 15px;
   text-decoration: none;
-  color: white;
+  color: rgb(126, 72, 28);
 }
 
 .mx-1 { 
