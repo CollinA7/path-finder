@@ -56,7 +56,7 @@ function Navi() {
         </Nav>
         </Container>
       );
-    }
+      }}
 
   return (
     
@@ -73,6 +73,7 @@ function Navi() {
     
   );
   
+
 }
 
 export default Navi;
