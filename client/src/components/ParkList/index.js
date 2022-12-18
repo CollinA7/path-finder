@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function ParkData() {
+function ParkList() {
     const state = 'IL'
     const [parks, setParks] = useState([])
     // function weatherApi() {
@@ -33,7 +33,11 @@ function ParkData() {
                 return (
                     <div className="park-card" key={park.id}>
                         <h3 className="park-title">{park.title}</h3>
-                        <p>{park.parkBody}</p>
+                        <p>
+                            <strong>Ameneties:</strong>
+                            {park.amenities}
+                        </p>
+                        <p>{park.bodyText}</p>
                     </div>
                 )
             })}
@@ -41,4 +45,4 @@ function ParkData() {
     )
 }
 
-export default ParkData
+export default ParkList

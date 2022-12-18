@@ -1,10 +1,10 @@
 import React from 'react'
-import ParkData from '../components/ParkData'
+import ParkList from '../components/ParkList'
 
 const Home = () => {
     return (
         <div className="container">
-            <ParkData />
+            <ParkList />
         </div>
     )
 }
