@@ -37,7 +37,15 @@ function ParkList() {
                             <strong>Ameneties:</strong>
                             {park.amenities}
                         </p>
-                        <p>{park.bodyText}</p>
+                        <button className="park-details">
+                            <strong>Details</strong>
+                        </button>
+                        <button className="weather-button">
+                            <strong>Check Weather</strong>
+                        </button>
+                        <button className="add-favorites">
+                            <strong>Add to Favorites</strong>
+                        </button>
                     </div>
                 )
             })}
