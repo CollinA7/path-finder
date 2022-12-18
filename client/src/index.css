@@ -64,7 +64,22 @@ body {
   padding-left: 400px;
 }
 
-.backLogin { 
+.goback { 
   text-decoration: none;
-  color: wheat;
+  color:  rgb(126, 72, 28);
+}
+
+.logininfo { 
+ display: inline-flex;
+ margin: 0px;
+ padding: 0%;
+} 
+
+#email {
+  
+  padding-left: 45px;
+}
+
+#pwd { 
+  padding-left: 45px;
 }
