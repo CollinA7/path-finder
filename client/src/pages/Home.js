@@ -1,10 +1,10 @@
 import React from 'react'
-import FetchRequests from '../components/Fetch-requests'
+import ParkCards from '../components/ParkCards'
 
 const Home = () => {
     return (
         <div className="container">
-            <FetchRequests></FetchRequests>
+            <ParkCards />
         </div>
     )
 }
