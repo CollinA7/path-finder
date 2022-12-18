@@ -57,8 +57,8 @@ function Navi() {
         </Container>
       );
     }
-  }
 
+<<<<<<< HEAD
   return (
     
     <Navbar className="navb">
@@ -77,3 +77,21 @@ function Navi() {
 }
 
 export default Navi;
+=======
+    return (
+        <header className="flex-row px-1">
+            <h1>
+                <Link to="/">
+                    <span role="img" aria-label="shopping bag">
+                        Path-finder 🔭
+                    </span>
+                </Link>
+            </h1>
+
+            <nav>{showNavigation()}</nav>
+        </header>
+    )
+}
+
+export default Nav
+>>>>>>> develop

@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react'
+import FetchRequests from '../components/Fetch-requests'
 
 const Home = () => {
+    return (
+        <div className="container">
+            <FetchRequests></FetchRequests>
+        </div>
+    )
+}
 
-  return (
-    <div className="container">
-    </div>
-  );
-};
-
-export default Home;
+export default Home
