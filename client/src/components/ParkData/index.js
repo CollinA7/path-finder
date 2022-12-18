@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-function ParkCards() {
-    const state = 'AR'
+function ParkData() {
+    const state = 'IL'
     const [parks, setParks] = useState([])
     // function weatherApi() {
     //     fetch(
@@ -11,36 +11,34 @@ function ParkCards() {
     //         .then((data) => console.log(data))
     // }
 
-    function npsApi() {
+    useEffect(() => {
+        // function npsApi() {
         fetch(
             // Here here is the API doc's ---> https://www.nps.gov/subjects/developer/api-documentation.htm
             `https://developer.nps.gov/api/v1/places?stateCode=${state}%2C&limit=6&api_key=4gdnWgGflih6aZU43Ixv1a2z9pcnsmj8RqVcTeQV`
         )
             .then((response) => response.json())
-            .then((park) => ParkList(park.data))
+            .then((data) => {
+                console.log(data.data)
+                setParks(data.data)
+            })
+            .catch((err) => {
+                console.log(err.message)
+            })
+    }, [])
 
-        // return for the npsApi function returns the national parks data
-        return
-    }
-
-    // TODO: map the list element to display array --- maybe useEffect hooks could help
-    function ParkList(props) {
-        const listItem = props.map((park) => (
-            // Maybe try park.props.children
-            <li key={park.id}>{park}</li>
-        ))
-        // console.log(listItem)
-        return <ul>{listItem}</ul>
-    }
-    console.log(parks)
     return (
         <div>
-            {npsApi()}
-            <div>
-                <ParkList />
-            </div>
+            {parks.map((park) => {
+                return (
+                    <div className="park-card" key={park.id}>
+                        <h3 className="park-title">{park.title}</h3>
+                        <p>{park.parkBody}</p>
+                    </div>
+                )
+            })}
         </div>
     )
 }
 
-export default ParkCards
+export default ParkData

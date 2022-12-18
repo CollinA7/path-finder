@@ -1,10 +1,10 @@
 import React from 'react'
-import ParkCards from '../components/ParkCards'
+import ParkData from '../components/ParkData'
 
 const Home = () => {
     return (
         <div className="container">
-            <ParkCards />
+            <ParkData />
         </div>
     )
 }
