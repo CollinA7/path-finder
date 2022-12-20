@@ -1,19 +1,14 @@
 import React from 'react'
 import ParkList from '../components/ParkList'
+import StateForm from '../components/StateForm'
 
 const Home = () => {
     return (
         <div className="container">
             <div>
                 {/* TODO: add form data here */}
-                <form>
-                    <label>
-                        State:
-                        <input type="text" name="name" />
-                    </label>
-                    <input type="submit" value="Submit" />
-                    <ParkList />
-                </form>
+                <StateForm />
+                {/* <ParkList /> */}
             </div>
         </div>
     )

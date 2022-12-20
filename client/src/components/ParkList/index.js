@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 function ParkList() {
     const state = 'IL'
     const [parks, setParks] = useState([])
+
+    function formHandler(data) {}
     // function weatherApi() {
     //     fetch(
     //         `http://api.openweathermap.org/geo/1.0/direct?q=sanantonio,country=US&limit=5&appid=4fce90cadf9eba29dd340628ab5664dc`
