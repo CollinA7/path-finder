@@ -28,7 +28,7 @@ function ParkList() {
     }, [])
 
     return (
-        <div>
+        <div className='parklist'>
             {parks.map((park) => {
                 return (
                     <div className="park-card" key={park.id}>

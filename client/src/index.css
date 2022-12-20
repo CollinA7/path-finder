@@ -1,6 +1,5 @@
 body { 
-  background-image: url(../src/assets/autumn-trees.jpeg);
-  background-repeat: no-repeat;
+  background-color: black;
   
 }
 
@@ -82,4 +81,8 @@ body {
 
 #pwd { 
   padding-left: 45px;
+}
+
+.parklist { 
+  background-color: burlywood;
 }
