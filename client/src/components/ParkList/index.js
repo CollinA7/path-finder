@@ -12,23 +12,25 @@ function ParkList() {
     // }
 
     useEffect(() => {
-        // function npsApi() {
         fetch(
             // Here here is the API doc's ---> https://www.nps.gov/subjects/developer/api-documentation.htm
             `https://developer.nps.gov/api/v1/places?stateCode=${state}%2C&limit=6&api_key=4gdnWgGflih6aZU43Ixv1a2z9pcnsmj8RqVcTeQV`
         )
             .then((response) => response.json())
-            .then((data) => {
-                console.log(data.data)
-                setParks(data.data)
+            .then((park) => {
+                console.log(park.data)
+                setParks(park.data)
             })
             .catch((err) => {
                 console.log(err.message)
             })
     }, [])
 
+    function checkWeather() {}
+
     return (
         <div>
+            {/* parks.map creates each list element from the nps API */}
             {parks.map((park) => {
                 return (
                     <div className="park-card" key={park.id}>
@@ -37,10 +39,11 @@ function ParkList() {
                             <strong>Ameneties:</strong>
                             {park.amenities}
                         </p>
-                        <button className="park-details">
-                            <strong>Details</strong>
-                        </button>
-                        <button className="weather-button">
+                        {/* The check weather button pings the open weather API to check the weather */}
+                        <button
+                            className="weather-button"
+                            onClick={checkWeather()}
+                        >
                             <strong>Check Weather</strong>
                         </button>
                         <button className="add-favorites">
