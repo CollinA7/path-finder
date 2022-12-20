@@ -1,7 +1,7 @@
 import React from 'react'
 import ParkList from '../components/ParkList'
 
-const Home = () => {
+const parkData = () => {
     return (
         <div className="container">
             <div>
@@ -12,10 +12,11 @@ const Home = () => {
                         <input type="text" name="name" />
                     </label>
                     <input type="submit" value="Submit" />
+                    <ParkList />
                 </form>
             </div>
         </div>
     )
 }
 
-export default Home
+export default parkData

@@ -16,6 +16,7 @@ import Nav from './components/Nav';
 import WebFont from 'webfontloader'; 
 //boostrap css 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import parkData from './pages/ParkData';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -54,6 +55,7 @@ function App() {
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/signup" component={Signup} />
                         <Route component={NoMatch} />
+                        <Route exact path="/ParkData" component={parkData}></Route>
                     </Switch>
                 </div>
             </Router>
