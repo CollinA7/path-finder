@@ -49,10 +49,11 @@ function ParkList() {
             {parks.map((park) => {
                 return (
                     <div className="park-card" key={park.id}>
-                        <div className="cardContainer">
-                            <Container fluid>
-                                <Row>
-                                    <Col xs lg="2">
+
+                        <div className='cardContainer'>
+                                <Container fluid='true'>
+                                    <CardGroup>
+
                                         <Card style={{ width: '18rem' }}>
                                             <Card.Img
                                                 variant="top"
@@ -91,9 +92,8 @@ function ParkList() {
                                                 </ButtonGroup>
                                             </Card.Body>
                                         </Card>
-                                    </Col>
-                                </Row>
-                            </Container>
+                                    </CardGroup>
+                                    </Container>
                         </div>
                     </div>
                 )

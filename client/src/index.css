@@ -2,25 +2,69 @@ body {
     background-color: black;
 }
 
-.navb {
+.navb { 
+  display: flex;
+  background-color: wheat;
+  margin: 0%;
+  font-size: 15px;
+  padding-bottom: 30px;
+  margin-bottom: 45px;
+} 
+
+.head { 
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.navinfo h1 { 
+  font-size: 20px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navinfo { 
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.natureImg {
+  height: 200px;
     display: flex;
-    background-color: wheat;
-    margin: 0%;
-    font-size: 15px;
-    padding-bottom: 30px;
-    margin-bottom: 45px;
+    align-items: center;
+    justify-content: center;
 }
 
-.head {
-    padding-left: 50px;
-    padding-bottom: 20px;
+.imageCarousel h3 {
+  font-size: 75px;
 }
 
+.imageCarousel p { 
+  font-size: 90px;
+}
+
+
+
+.ladybirdtext{ 
+  font-size: 50px;
+}
 .navtext {
     padding-left: 0px;
     color: rgb(126, 72, 28);
     text-decoration: none;
     font-size: 75px;
+}
+.navtext h2 { 
+  color: rgb(104, 168, 21);
+  display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .signup {
@@ -85,5 +129,5 @@ body {
     background-color: burlywood;
 }
 
-.cardContainer {
-}
+
+

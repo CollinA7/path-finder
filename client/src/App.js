@@ -43,7 +43,7 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ['Lobster']
+        families: ['Lobster', 'Alfa Slab One', 'Abril Fatface']
       }
     });
    }, []);
