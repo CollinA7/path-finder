@@ -37,8 +37,9 @@ function ParkList() {
                 return (
                     
                     <div className="park-card" key={park.id}>
+                        <div>
                         <Card style={{ width: '18rem' }} >
-                          <Card.Img variant="top" src={park.images[0]}></Card.Img>
+                          <Card.Img variant="top" src={park.images[0].url}></Card.Img>
                         <Card.Body>    
                             <Card.Title >{park.title}</Card.Title>
                             <p>
@@ -47,6 +48,7 @@ function ParkList() {
                             </p>
                         </Card.Body>
                         </Card>
+                        </div>
                         {/* The check weather button pings the open weather API to check the weather */}
                         <button
                             className="weather-button"
