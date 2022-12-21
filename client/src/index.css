@@ -3,9 +3,6 @@ body {
   
 }
 
-.home-container { 
-  background-image: url(./assets/autumn-trees.jpeg);
-}
 .navb { 
   display: flex;
   background-color: wheat;
@@ -20,6 +17,27 @@ body {
   padding-bottom: 20px;
 }
 
+.natureImg {
+  height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.imageCarousel h3 {
+  font-size: 75px;
+}
+
+.imageCarousel p { 
+  font-size: 100px;
+}
+
+
+
+.ladybirdtext{ 
+
+}
 .navtext {
   padding-left: 0px;
   color: rgb(126, 72, 28);
@@ -90,6 +108,3 @@ body {
   background-color: burlywood;
 }
 
-.cardContainer { 
-  
-}

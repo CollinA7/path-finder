@@ -1,11 +1,15 @@
 import React from 'react'
+import Jumbotron from '../components/Jumbotron'
 import ParkList from '../components/ParkList'
+
 
 const Home = () => {
     return (
         <div className="home-container">
             <div>
-                {/* TODO: add form data here */}
+                
+               
+                <Jumbotron></Jumbotron>
             </div>
         </div>
     )

@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Badge from 'react-bootstrap/Badge'; 
+import Button from "react-bootstrap/esm/Button";
 
 
 function Navi() {
@@ -13,7 +14,7 @@ function Navi() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <Container>
+        <Container >
           <Nav>
         <ul className="f">
           <li className="mx-1">
@@ -29,23 +30,25 @@ function Navi() {
     } else {
       return (
         <Container>
-          <Nav>
-            <Nav.Item>
+          <Nav className="justify-content-center">
+            <Nav.Link>
           <li className="mx-1">
-            <Badge pill bg="warning">
+            <Button variant="warning" size="lg">
             <Link to="/signup" className="signup">
-              Signup
+              <strong>Signup</strong>
             </Link>
-            </Badge>
+            </Button>
           </li>
-          </Nav.Item>
+          </Nav.Link>
+          <Nav.Link>
           <li className="mx-2">
-            <Badge pill bg='warning'>
+            <Button variant="warning" size="lg">
             <Link to="/login" className="login">
-              Login
+            <strong>Login</strong>
             </Link>
-            </Badge>
+            </Button>
           </li>
+          </Nav.Link>
         </Nav>
         </Container>
       );
@@ -53,16 +56,18 @@ function Navi() {
 
   return (
     
-    <Navbar className="navb">
+    <Nav className="justify-content-center" >
     <header className="head">
       <h1>
-        <Link to="/" text='warning' className="navtext">
-          <span style={{fontFamily: 'Lobster'}} role="img" >Path-finder ⛰</span>
+        <Link to="/parks" text='warning' className="navtext">
+          <span style={{fontFamily: 'Lobster'}} role="img" >⛰Path-finder⛰</span>
         </Link>
       </h1>
+      <Nav.Link className="justify-content-center">
         {showNavigation()}
+        </Nav.Link>    
     </header>
-    </Navbar>
+    </Nav>
     
   );
   

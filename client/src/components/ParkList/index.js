@@ -42,9 +42,8 @@ function ParkList() {
                 return (
                     <div className="park-card" key={park.id}>
                         <div className='cardContainer'>
-                                <Container fluid>
-                                    <Row>
-                                        <Col xs lg="2">
+                                <Container fluid='true'>
+                                    <CardGroup>
                                         <Card style={{ width: '18rem' }}>
                                             <Card.Img
                                                 variant="top"
@@ -78,8 +77,7 @@ function ParkList() {
                                                 </ButtonGroup>
                                             </Card.Body>
                                         </Card>
-                                        </Col>
-                                    </Row>
+                                    </CardGroup>
                                     </Container>
                         </div>
                     </div>
