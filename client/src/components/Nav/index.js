@@ -61,6 +61,7 @@ function Navi() {
       <h1>
         <Link to="/parks" text='warning' className="navtext">
           <span style={{fontFamily: 'Lobster'}} role="img" >⛰Path-finder⛰</span>
+          <h2 style={{fontFamily:'Abril Fatface'}}> Click 'Pathfinder' to find your way!</h2>
         </Link>
       </h1>
       <Nav.Link className="justify-content-center">

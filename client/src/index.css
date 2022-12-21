@@ -13,8 +13,26 @@ body {
 } 
 
 .head { 
-  padding-left: 50px;
-  padding-bottom: 20px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.navinfo h1 { 
+  font-size: 20px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navinfo { 
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .natureImg {
@@ -30,19 +48,25 @@ body {
 }
 
 .imageCarousel p { 
-  font-size: 100px;
+  font-size: 90px;
 }
 
 
 
 .ladybirdtext{ 
-
+  font-size: 50px;
 }
 .navtext {
   padding-left: 0px;
   color: rgb(126, 72, 28);
   text-decoration: none;
   font-size: 75px;
+}
+.navtext h2 { 
+  color: rgb(104, 168, 21);
+  display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .signup { 

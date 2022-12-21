@@ -49,7 +49,7 @@ function Jumbotron() {
   
           <Carousel.Caption >
             <h3 style={{fontFamily: 'Lobster'}}>Lady Bird Johnson</h3>
-            <p >
+            <p className='ladybirdtext'>
             “The environment is where we all meet; where all have a mutual interest; it is the one thing all of us share.”
             </p>
           </Carousel.Caption>
