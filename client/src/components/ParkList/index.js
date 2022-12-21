@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'; 
+import Button from 'react-bootstrap/Button'; 
+import Card from 'react-bootstrap/Card'; 
 
 function ParkList() {
     const state = 'IL'
@@ -33,12 +35,18 @@ function ParkList() {
             {/* parks.map creates each list element from the nps API */}
             {parks.map((park) => {
                 return (
+                    
                     <div className="park-card" key={park.id}>
-                        <h3 className="park-title">{park.title}</h3>
-                        <p>
+                        <Card style={{ width: '18rem' }} >
+                          <Card.Img variant="top" src={park.images[0]}></Card.Img>
+                        <Card.Body>    
+                            <Card.Title >{park.title}</Card.Title>
+                            <p>
                             <strong>Ameneties:</strong>
                             {park.amenities}
-                        </p>
+                            </p>
+                        </Card.Body>
+                        </Card>
                         {/* The check weather button pings the open weather API to check the weather */}
                         <button
                             className="weather-button"

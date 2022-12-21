@@ -1,5 +1,7 @@
-import React from 'react'
-import ParkList from '../components/ParkList'
+import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import ParkList from '../components/ParkList';
 
 const ParkData = () => {
     return (
@@ -8,7 +10,7 @@ const ParkData = () => {
                 {/* TODO: add form data here */}
                 <form>
                     <label>
-                        State:
+                        State (Two Letter Abbreviation):
                         <input type="text" name="name" />
                     </label>
                     <input type="submit" value="Submit" />
