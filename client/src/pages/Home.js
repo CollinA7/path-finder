@@ -1,5 +1,5 @@
 import React from 'react'
-import ParkList from '../components/ParkList'
+// import ParkList from '../components/ParkList'
 import StateForm from '../components/StateForm'
 
 const Home = () => {
