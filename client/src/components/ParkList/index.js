@@ -11,14 +11,22 @@ function ParkList() {
     const state = 'IL'
     const [parks, setParks] = useState([])
 
-    function formHandler(data) {}
-    // function weatherApi() {
-    //     fetch(
-    //         `http://api.openweathermap.org/geo/1.0/direct?q=sanantonio,country=US&limit=5&appid=4fce90cadf9eba29dd340628ab5664dc`
-    //     )
-    //         .then((response) => response.json())
-    //         .then((data) => console.log(data))
-    // }
+    function checkWeather(park) {
+        const lat = park.latitude
+        const lon = park.longitude
+        fetch(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=4fce90cadf9eba29dd340628ab5664dc`
+        )
+            .then((response) => response.json())
+            // This console.log responds with the weather data on the clicked park
+            .then((data) => console.log(data))
+    }
+
+    // weather click handler passes the park data to the weather API
+    function weatherHandler(park, e) {
+        e.preventDefault()
+        checkWeather(park)
+    }
 
     useEffect(() => {
         fetch(
@@ -35,18 +43,16 @@ function ParkList() {
             })
     }, [])
 
-    function checkWeather() {}
-
     return (
         <div>
             {/* parks.map creates each list element from the nps API */}
             {parks.map((park) => {
                 return (
                     <div className="park-card" key={park.id}>
-                        <div className='cardContainer'>
-                                <Container fluid>
-                                    <Row>
-                                        <Col xs lg="2">
+                        <div className="cardContainer">
+                            <Container fluid>
+                                <Row>
+                                    <Col xs lg="2">
                                         <Card style={{ width: '18rem' }}>
                                             <Card.Img
                                                 variant="top"
@@ -66,7 +72,12 @@ function ParkList() {
                                                     <Button
                                                         variant="primary"
                                                         className="weather-button"
-                                                        onClick={checkWeather()}
+                                                        onClick={(e) =>
+                                                            weatherHandler(
+                                                                park,
+                                                                e
+                                                            )
+                                                        }
                                                     >
                                                         <strong>
                                                             Check Weather
@@ -80,9 +91,9 @@ function ParkList() {
                                                 </ButtonGroup>
                                             </Card.Body>
                                         </Card>
-                                        </Col>
-                                    </Row>
-                                    </Container>
+                                    </Col>
+                                </Row>
+                            </Container>
                         </div>
                     </div>
                 )
