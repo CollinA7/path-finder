@@ -1,15 +1,16 @@
 import React from 'react'
 import Jumbotron from '../components/Jumbotron'
 import ParkList from '../components/ParkList'
+// import StateForm from '../components/StateForm'
 
 
 const Home = () => {
     return (
         <div className="home-container">
-            <div>
-                
-               
+            <div>                
+           
                 <Jumbotron></Jumbotron>
+
             </div>
         </div>
     )

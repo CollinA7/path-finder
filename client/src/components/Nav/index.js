@@ -1,3 +1,4 @@
+
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link, NavLink } from "react-router-dom";
@@ -9,7 +10,51 @@ import Badge from 'react-bootstrap/Badge';
 import Button from "react-bootstrap/esm/Button";
 
 
+
+
 function Navi() {
+    function showNavigation() {
+        if (Auth.loggedIn()) {
+            return (
+                <Container>
+                    <Nav>
+                        <ul className="f">
+                            <li className="mx-1">
+                                {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+                                <a href="/" onClick={() => Auth.logout()}>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </Nav>
+                </Container>
+            )
+        } else {
+            return (
+                <Container>
+                    <Nav>
+                        <Nav.Item>
+                            <li className="mx-1">
+                                <Badge pill bg="warning">
+                                    <Link to="/signup" className="signup">
+                                        Signup
+                                    </Link>
+                                </Badge>
+                            </li>
+                        </Nav.Item>
+                        <li className="mx-2">
+                            <Badge pill bg="warning">
+                                <Link to="/login" className="login">
+                                    Login
+                                </Link>
+                            </Badge>
+                        </li>
+                    </Nav>
+                </Container>
+            )
+        }
+    }
+
 
   function showNavigation() {
     if (Auth.loggedIn()) {
@@ -73,6 +118,7 @@ function Navi() {
   );
   
 
+
 }
 
-export default Navi;
+export default Navi
