@@ -1,0 +1,91 @@
+body { 
+  background-color: black;
+  
+}
+
+.home-container { 
+  background-image: url(./assets/autumn-trees.jpeg);
+}
+.navb { 
+  display: flex;
+  background-color: wheat;
+  margin: 0%;
+  font-size: 15px;
+  padding-bottom: 30px;
+  margin-bottom: 45px;
+} 
+
+.head { 
+  padding-left: 50px;
+  padding-bottom: 20px;
+}
+
+.navtext {
+  padding-left: 0px;
+  color: rgb(126, 72, 28);
+  text-decoration: none;
+  font-size: 75px;
+}
+
+.signup { 
+  font-size: 15px;
+  text-decoration: none;
+  color: rgb(126, 72, 28); 
+}
+
+.login { 
+  font-size: 15px;
+  text-decoration: none;
+  color: rgb(126, 72, 28);
+}
+
+.mx-1 { 
+  padding-left: 30px;
+  padding-right: 20px;
+}
+
+.mx-2 { 
+  padding-left: 40px;
+}
+
+.formsignup h2 {
+  color: rgb(126, 72, 28);
+  font-size: 50px;
+  padding-bottom: 25px;
+  margin-left: 10px;
+}
+
+.signupdiv { 
+  background: wheat;
+  margin: 150px;
+  padding: 50px;
+}
+
+.formsignup { 
+  padding-top: 10px;
+  padding-left: 400px;
+}
+
+.goback { 
+  text-decoration: none;
+  color:  rgb(126, 72, 28);
+}
+
+.logininfo { 
+ display: inline-flex;
+ margin: 0px;
+ padding: 0%;
+} 
+
+#email {
+  
+  padding-left: 45px;
+}
+
+#pwd { 
+  padding-left: 45px;
+}
+
+.parklist { 
+  background-color: burlywood;
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import {
     ApolloClient,
@@ -8,11 +8,17 @@ import {
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 
-import Home from './pages/Home'
-import NoMatch from './pages/NoMatch'
-import Login from './pages/Login'
-import Signup from './pages/Signup'
-import Nav from './components/Nav'
+import Home from './pages/Home';
+import NoMatch from './pages/NoMatch';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import ParkData from './pages/ParkData';
+import Nav from './components/Nav';
+import WebFont from 'webfontloader'; 
+//boostrap css 
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -34,6 +40,13 @@ const client = new ApolloClient({
 })
 
 function App() {
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Lobster']
+      }
+    });
+   }, []);
     return (
         <ApolloProvider client={client}>
             <Router>
@@ -41,9 +54,11 @@ function App() {
                     <Nav />
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route exact path="/login" component={Login} />
-                        <Route exact path="/signup" component={Signup} />
-                        <Route component={NoMatch} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/signup" component={Signup} />
+                        <Route path="/parks" component={ParkData}></Route>
+                        <Route path= "*" component={NoMatch} />
+                       
                     </Switch>
                 </div>
             </Router>

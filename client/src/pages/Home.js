@@ -4,7 +4,7 @@ import StateForm from '../components/StateForm'
 
 const Home = () => {
     return (
-        <div className="container">
+        <div className="home-container">
             <div>
                 {/* TODO: add form data here */}
                 <StateForm />
