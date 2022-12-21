@@ -17,13 +17,6 @@ function Navi() {
           <Nav>
         <ul className="f">
           <li className="mx-1">
-            <Badge pill bg='warning'>
-            <Link to="/orderHistory">
-              Order History
-            </Link>
-            </Badge>
-          </li>
-          <li className="mx-1">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
               Logout

@@ -1,6 +1,11 @@
-import React, { useEffect, useState } from 'react'; 
-import Button from 'react-bootstrap/Button'; 
-import Card from 'react-bootstrap/Card'; 
+import React, { useEffect, useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import CardGroup from 'react-bootstrap/CardGroup'
+import Container from 'react-bootstrap/Container'
 
 function ParkList() {
     const state = 'IL'
@@ -35,29 +40,48 @@ function ParkList() {
             {/* parks.map creates each list element from the nps API */}
             {parks.map((park) => {
                 return (
-                    
                     <div className="park-card" key={park.id}>
-                        <div>
-                        <Card style={{ width: '18rem' }} >
-                          <Card.Img variant="top" src={park.images[0].url}></Card.Img>
-                        <Card.Body>    
-                            <Card.Title >{park.title}</Card.Title>
-                            <Card.Text>
-                            <strong>Ameneties:</strong>
-                            {park.amenities}
-                            </Card.Text>
-                        
-                        {/* The check weather button pings the open weather API to check the weather */}
-                        <Button variant="primary" className="weather-button"
-                            onClick={checkWeather()}>
-                            <strong>Check Weather</strong>
-                        </Button>
-                        <Button className="add-favorites"> 
-                            <strong>Add to Favorites</strong>
-                        </Button> 
-                        </Card.Body>  
-                        </Card>
-                        </div>  
+                        <div className='cardContainer'>
+                                <Container fluid>
+                                    <Row>
+                                        <Col xs lg="2">
+                                        <Card style={{ width: '18rem' }}>
+                                            <Card.Img
+                                                variant="top"
+                                                src={park.images[0].url}
+                                            ></Card.Img>
+                                            <Card.Body>
+                                                <Card.Title>
+                                                    {park.title}
+                                                </Card.Title>
+                                                <Card.Text>
+                                                    <strong>Ameneties:</strong>
+                                                    {park.amenities}
+                                                </Card.Text>
+
+                                                {/* The check weather button pings the open weather API to check the weather */}
+                                                <ButtonGroup>
+                                                    <Button
+                                                        variant="primary"
+                                                        className="weather-button"
+                                                        onClick={checkWeather()}
+                                                    >
+                                                        <strong>
+                                                            Check Weather
+                                                        </strong>
+                                                    </Button>
+                                                    <Button className="add-favorites">
+                                                        <strong>
+                                                            Add to Favorites
+                                                        </strong>
+                                                    </Button>
+                                                </ButtonGroup>
+                                            </Card.Body>
+                                        </Card>
+                                        </Col>
+                                    </Row>
+                                    </Container>
+                        </div>
                     </div>
                 )
             })}
