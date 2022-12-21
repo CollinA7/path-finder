@@ -1,18 +1,67 @@
+
 import React from "react";
 import Auth from "../../utils/auth";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Badge from 'react-bootstrap/Badge'; 
+import Button from "react-bootstrap/esm/Button";
 
-function Nav() {
+
+
+
+function Navi() {
+    function showNavigation() {
+        if (Auth.loggedIn()) {
+            return (
+                <Container>
+                    <Nav>
+                        <ul className="f">
+                            <li className="mx-1">
+                                {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+                                <a href="/" onClick={() => Auth.logout()}>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </Nav>
+                </Container>
+            )
+        } else {
+            return (
+                <Container>
+                    <Nav>
+                        <Nav.Item>
+                            <li className="mx-1">
+                                <Badge pill bg="warning">
+                                    <Link to="/signup" className="signup">
+                                        Signup
+                                    </Link>
+                                </Badge>
+                            </li>
+                        </Nav.Item>
+                        <li className="mx-2">
+                            <Badge pill bg="warning">
+                                <Link to="/login" className="login">
+                                    Login
+                                </Link>
+                            </Badge>
+                        </li>
+                    </Nav>
+                </Container>
+            )
+        }
+    }
+
 
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/orderHistory">
-              Order History
-            </Link>
-          </li>
+        <Container >
+          <Nav>
+        <ul className="f">
           <li className="mx-1">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
@@ -20,38 +69,56 @@ function Nav() {
             </a>
           </li>
         </ul>
+        </Nav>
+        </Container>
       );
     } else {
       return (
-        <ul className="flex-row">
+        <Container>
+          <Nav className="justify-content-center">
+            <Nav.Link>
           <li className="mx-1">
-            <Link to="/signup">
-              Signup
+            <Button variant="warning" size="lg">
+            <Link to="/signup" className="signup">
+              <strong>Signup</strong>
             </Link>
+            </Button>
           </li>
-          <li className="mx-1">
-            <Link to="/login">
-              Login
+          </Nav.Link>
+          <Nav.Link>
+          <li className="mx-2">
+            <Button variant="warning" size="lg">
+            <Link to="/login" className="login">
+            <strong>Login</strong>
             </Link>
+            </Button>
           </li>
-        </ul>
+          </Nav.Link>
+        </Nav>
+        </Container>
       );
-    }
-  }
+      }}
 
   return (
-    <header className="flex-row px-1">
+    
+    <Nav className="justify-content-center" >
+    <header className="head">
       <h1>
-        <Link to="/">
-          <span role="img" aria-label="shopping bag">Path-finder 🔭</span>
+        <Link to="/parks" text='warning' className="navtext">
+          <span style={{fontFamily: 'Lobster'}} role="img" >⛰Path-finder⛰</span>
+          <h2 style={{fontFamily:'Abril Fatface'}}> Click 'Pathfinder' to find your way!</h2>
         </Link>
       </h1>
-
-      <nav>
+      <Nav.Link className="justify-content-center">
         {showNavigation()}
-      </nav>
+        </Nav.Link>    
     </header>
+    </Nav>
+    
   );
+  
+
+
 }
 
-export default Nav;
+export default Navi
