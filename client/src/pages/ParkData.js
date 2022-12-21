@@ -1,7 +1,7 @@
 import React from 'react'
 import ParkList from '../components/ParkList'
 
-const parkData = () => {
+const ParkData = () => {
     return (
         <div className="container">
             <div>
@@ -19,4 +19,4 @@ const parkData = () => {
     )
 }
 
-export default parkData
+export default ParkData

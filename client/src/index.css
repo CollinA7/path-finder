@@ -3,6 +3,9 @@ body {
   
 }
 
+.home-container { 
+  background-image: url(./assets/autumn-trees.jpeg);
+}
 .navb { 
   display: flex;
   background-color: wheat;

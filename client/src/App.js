@@ -12,11 +12,13 @@ import Home from './pages/Home';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import ParkData from './pages/ParkData';
 import Nav from './components/Nav';
 import WebFont from 'webfontloader'; 
 //boostrap css 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import parkData from './pages/ParkData';
+
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -52,10 +54,11 @@ function App() {
                     <Nav />
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route exact path="/login" component={Login} />
-                        <Route exact path="/signup" component={Signup} />
-                        <Route component={NoMatch} />
-                        <Route exact path="/ParkData" component={parkData}></Route>
+                        <Route path="/login" component={Login} />
+                        <Route path="/signup" component={Signup} />
+                        <Route path="/parks" component={ParkData}></Route>
+                        <Route path= "*" component={NoMatch} />
+                       
                     </Switch>
                 </div>
             </Router>
