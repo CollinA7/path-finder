@@ -42,23 +42,22 @@ function ParkList() {
                           <Card.Img variant="top" src={park.images[0].url}></Card.Img>
                         <Card.Body>    
                             <Card.Title >{park.title}</Card.Title>
-                            <p>
+                            <Card.Text>
                             <strong>Ameneties:</strong>
                             {park.amenities}
-                            </p>
-                        </Card.Body>
-                        </Card>
-                        </div>
+                            </Card.Text>
+                        
                         {/* The check weather button pings the open weather API to check the weather */}
-                        <button
-                            className="weather-button"
-                            onClick={checkWeather()}
-                        >
+                        <Button variant="primary" className="weather-button"
+                            onClick={checkWeather()}>
                             <strong>Check Weather</strong>
-                        </button>
-                        <button className="add-favorites">
+                        </Button>
+                        <Button className="add-favorites"> 
                             <strong>Add to Favorites</strong>
-                        </button>
+                        </Button> 
+                        </Card.Body>  
+                        </Card>
+                        </div>  
                     </div>
                 )
             })}
