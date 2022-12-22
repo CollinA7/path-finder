@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 class StateForm extends React.Component {
     constructor(props) {
         super(props)
@@ -16,6 +17,7 @@ class StateForm extends React.Component {
     handleSubmit(event) {
         console.log(this.state.value)
         event.preventDefault()
+        this.props.searchhandler(this.state.value)
     }
 
     render() {

@@ -7,8 +7,8 @@ import Row from 'react-bootstrap/Row'
 import CardGroup from 'react-bootstrap/CardGroup'
 import Container from 'react-bootstrap/Container'
 
-function ParkList() {
-    const state = 'IL'
+function ParkList({searchTerm}) {
+    const state = ''
     const [parks, setParks] = useState([])
 
     function checkWeather(park) {
@@ -31,7 +31,7 @@ function ParkList() {
     useEffect(() => {
         fetch(
             // Here here is the API doc's ---> https://www.nps.gov/subjects/developer/api-documentation.htm
-            `https://developer.nps.gov/api/v1/places?stateCode=${state}%2C&limit=6&api_key=4gdnWgGflih6aZU43Ixv1a2z9pcnsmj8RqVcTeQV`
+            `https://developer.nps.gov/api/v1/places?stateCode=${searchTerm}%2C&limit=6&api_key=4gdnWgGflih6aZU43Ixv1a2z9pcnsmj8RqVcTeQV`
         )
             .then((response) => response.json())
             .then((park) => {
@@ -41,7 +41,7 @@ function ParkList() {
             .catch((err) => {
                 console.log(err.message)
             })
-    }, [])
+    }, [searchTerm])
 
     return (
         <div>
@@ -70,7 +70,7 @@ function ParkList() {
 
                                                 {/* The check weather button pings the open weather API to check the weather */}
                                                 <ButtonGroup>
-                                                    <Button
+                                                    {/* <Button
                                                         variant="primary"
                                                         className="weather-button"
                                                         onClick={(e) =>
@@ -88,7 +88,7 @@ function ParkList() {
                                                         <strong>
                                                             Add to Favorites
                                                         </strong>
-                                                    </Button>
+                                                    </Button> */}
                                                 </ButtonGroup>
                                             </Card.Body>
                                         </Card>
