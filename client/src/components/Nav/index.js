@@ -94,6 +94,15 @@ function Navi() {
             </Button>
           </li>
           </Nav.Link>
+          <Nav.Link>
+          <li className="mx-2">
+            <Button variant="warning" size="lg">
+            <Link to="/" className="login">
+            <strong>Home</strong>
+            </Link>
+            </Button>
+          </li>
+          </Nav.Link>
         </Nav>
         </Container>
       );
